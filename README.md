@@ -26,7 +26,7 @@
 |title       |string        | null: false         |
 |user        |references    | foreign_key: true   |
 |description |text          | null: false         |
-|deadline    |date          | null: false         |
+|deadline    |datetime      | null: false         |
 |state       |string        | null: false         |
 
 #### Association
@@ -40,7 +40,7 @@
 |title       |string        | null: false         |
 |user        |references    | foreign_key: true   |
 |description |text          | null: false         |
-|deadline    |date          | null: false         |
+|deadline    |datetime      | null: false         |
 |state       |string        | null: false         |
 
 #### Association
