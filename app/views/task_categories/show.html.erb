@@ -19,15 +19,15 @@
       </tr>                        
   </table>
 
-  <%= render "detail_tasks/form", locals: { detail_task: @detail_task } %>
+  <%= render "detail_form", locals: { detail_task: @detail_task } %>
    <% if @detail_tasks.present? %>
     <% @detail_tasks.each do |detail_task|%>
       <li class="detail_tasks_list">
       <%= detail_task.title %>
       <%= detail_task.deadline%>
       <%= detail_task.user.name %>
-      <%= link_to '編集', edit_detail_task_path(detail_task.id) %>
-      <%= link_to '削除', detail_task_path(detail_task.id), method: :delete, data: { confirm: '削除してよろしいですか？' } %>
+      <%= link_to '編集', edit_task_category_detail_task_path(detail_task.id) %> 
+      <%= link_to '削除', task_category_detail_task_path(@task_category,detail_task.id), method: :delete, data: { confirm: '削除してよろしいですか？' } %>
       </li>
     <% end %>
   <% end %>
