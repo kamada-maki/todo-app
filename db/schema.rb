@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_25_031744) do
+ActiveRecord::Schema.define(version: 2021_02_25_051037) do
+
+  create_table "task_categories", charset: "utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.bigint "user_id"
+    t.text "description", null: false
+    t.date "deadline", null: false
+    t.string "state", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_task_categories_on_user_id"
+  end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
