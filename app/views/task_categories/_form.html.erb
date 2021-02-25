@@ -1,0 +1,29 @@
+<%= form_with model:@task_category,  local: true do |f|%>
+  <div class="field">
+    <%= f.label :title, "TODOタイトル" %><br />
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description, "詳細" %><br />
+    <%= f.text_area :description, class: :form_description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :deadline, "完了期日" %><br />
+    <%= f.text_area :deadline, class: :form_deadline %>
+  </div>
+
+  <div class="field">
+    <%= f.label :state, "進捗状況" %><br />
+    <%= f.file_field :state %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id, "担当者" %><br />
+    <%= f.file_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit "保存する", class: :form_btn  %>
+  </div>
+<% end %>
