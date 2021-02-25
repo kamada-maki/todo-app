@@ -2,6 +2,7 @@ class TaskCategory < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :state
   belongs_to :user
+  has_many :detail_tasks
   with_options presence: true do
     validates :title
     validates :description
