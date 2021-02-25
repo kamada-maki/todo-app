@@ -1,5 +1,6 @@
 <%= render "shared/header" %>
 <h1>トップページ</h1>
+  <% if @task_categories.present? %>
     <% @task_categories.each do |task_category| %>
       <%= link_to task_category.title, task_category_path(task_category.id), method: :get %>
       <%= link_to task_category.deadline, task_category_path(task_category.id), method: :get %>
@@ -8,3 +9,4 @@
       <%= link_to '編集', edit_task_category_path(task_category.id) %>
       <%= link_to '削除', task_category_path(task_category.id), method: :delete, data: { confirm: '削除してよろしいですか？' } %>
    <% end %>
+<% end %>
