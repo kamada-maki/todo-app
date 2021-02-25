@@ -11,6 +11,9 @@ class DetailTasksController < ApplicationController
     end
   end
   def destroy
+    @task_category=TaskCategory.find(params[:task_category_id])
+    @detail_task = DetailTask.destroy(params[:id])
+    redirect_to task_category_path(@detail_task.task_category)
   end
   def edit
   end
