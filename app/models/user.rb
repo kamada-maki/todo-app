@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :name, presence: true
   has_many :task_categories,dependent: :nullify
+  has_many :detail_tasks,dependent: :nullify
 end

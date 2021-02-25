@@ -1,8 +1,8 @@
-class TaskCategory < ApplicationRecord
+class DetailTask < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :state
   belongs_to :user
-  has_many :detail_tasks
+  belongs_to :task_category
   with_options presence: true do
     validates :title
     validates :description
