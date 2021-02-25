@@ -20,6 +20,8 @@ class TaskCategoriesController < ApplicationController
       end
   end
   def show
+    @detail_task = DetailTask.new
+    @detail_tasks = @task_category.detail_tasks
   end
   def edit
   end
