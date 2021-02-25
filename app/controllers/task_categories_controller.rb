@@ -1,6 +1,8 @@
 class TaskCategoriesController < ApplicationController
   def index
     @task_categories = TaskCategory.all
+    @user = User.new
+    @users = User.all
   end
   def new
     @task_category = TaskCategory.new
