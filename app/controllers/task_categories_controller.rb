@@ -18,8 +18,20 @@ class TaskCategoriesController < ApplicationController
         render :new
       end
   end
+  def edit
+  end
+  def update
+    if @task_category.update(task_category_params)
+      render :index
+    else
+      render :edit
+    end
+  end
+  def destroy
+    @task_category.destroy
+    render :index
+  end
   private
-
   def task_category_params
     params.require(:task_category)
           .permit(:title, :description, :deadline, :state_id).merge(user_id: current_user.id)
