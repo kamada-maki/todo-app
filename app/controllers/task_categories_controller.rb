@@ -1,14 +1,14 @@
 class TaskCategoriesController < ApplicationController
   def index
-    @task_categories = Task_category.all
+    @task_categories = TaskCategory.all
   end
   def new
-    @task_category = Task_category.new
+    @task_category = TaskCategory.new
   end
   def create
-    @task_category=Task_category.new(task_category_params)
+    @task_category=TaskCategory.new(task_category_params)
       if @task_category.save
-        render :create
+        render :index
       else
         render :new
       end
