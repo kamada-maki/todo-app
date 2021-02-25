@@ -1,0 +1,2 @@
+class DetailTask < ApplicationRecord
+end

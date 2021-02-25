@@ -27,7 +27,7 @@
 |user        |references    | foreign_key: true   |
 |description |text          | null: false         |
 |deadline    |datetime      | null: false         |
-|state       |string        | null: false         |
+|state_id    |string        | null: false         |
 
 #### Association
 - belongs_to :user
@@ -41,7 +41,7 @@
 |user        |references    | foreign_key: true   |
 |description |text          | null: false         |
 |deadline    |datetime      | null: false         |
-|state       |string        | null: false         |
+|state_id    |string        | null: false         |
 
 #### Association
 - belongs_to :user
