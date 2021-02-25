@@ -1,24 +1,41 @@
-# README
+## テーブル設計
+![テーブル設計図](https://user-images.githubusercontent.com/74590047/109096240-88c35300-7760-11eb-920a-c7d068464867.png)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### usersテーブル
+---------------------------------------------
+| Column     | Type         |  Options      |
+|------------|--------------|---------------|
+| email      | string       | null: false   |
+| password   | string       | null: false   |
+| name       | string       | null: false   |
 
-Things you may want to cover:
+#### Association
+- has_many :task_categories
+- has_many :detail_tasks
+---------------------------------------------
+### task_categoryテーブル
+| column     | Type         |  Options            |
+|------------|------------- |---------------------|
+|title       |string        | null: false         |
+|user        |references    | foreign_key: true   |
+|description |text          | null: false         |
+|deadline    |date          | null: false         |
+|state       |string        | null: false         |
 
-* Ruby version
+#### Association
+- belongs_to :user
+- has_many :detail_tasks
 
-* System dependencies
 
-* Configuration
+### detail_taskテーブル
+| column     | Type         |  Options            |
+|------------|------------- |---------------------|
+|title       |string        | null: false         |
+|user        |references    | foreign_key: true   |
+|description |text          | null: false         |
+|deadline    |date          | null: false         |
+|state       |string        | null: false         |
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### Association
+- belongs_to :user
+- belongs_to :task_category
