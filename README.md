@@ -35,13 +35,14 @@
 
 
 ### detail_taskテーブル
-| column     | Type         |  Options            |
-|------------|------------- |---------------------|
-|title       |string        | null: false         |
-|user        |references    | foreign_key: true   |
-|description |text          | null: false         |
-|deadline    |datetime      | null: false         |
-|state_id    |string        | null: false         |
+| column       | Type         |  Options            |
+|--------------|------------- |---------------------|
+|title         |string        | null: false         |
+|user          |references    | foreign_key: true   |
+|task_category |references    | foreign_key: true   |
+|description   |text          | null: false         |
+|deadline      |datetime      | null: false         |
+|state_id      |string        | null: false         |
 
 #### Association
 - belongs_to :user

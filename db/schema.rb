@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_25_051037) do
+ActiveRecord::Schema.define(version: 2021_02_25_084610) do
+
+  create_table "detail_tasks", charset: "utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.bigint "task_category_id"
+    t.bigint "user_id"
+    t.text "description", null: false
+    t.date "deadline", null: false
+    t.integer "state_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["task_category_id"], name: "index_detail_tasks_on_task_category_id"
+    t.index ["user_id"], name: "index_detail_tasks_on_user_id"
+  end
 
   create_table "task_categories", charset: "utf8", force: :cascade do |t|
     t.string "title", null: false
