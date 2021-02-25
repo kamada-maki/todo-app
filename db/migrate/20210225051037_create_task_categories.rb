@@ -4,7 +4,7 @@ class CreateTaskCategories < ActiveRecord::Migration[6.1]
       t.string     :title,               null:false
       t.references :user,                foregin_key: true
       t.text       :description,         null:false
-      t.date       :deadline,            null:false
+      t.date       :datetime,            null:false
       t.string     :state,               null:false
       t.timestamps
     end
