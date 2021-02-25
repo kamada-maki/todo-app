@@ -9,6 +9,10 @@ class DetailTasksController < ApplicationController
       render "task_categories/show"
     end
   end
+  def destroy
+  end
+  def edit
+  end
   private
   def detail_task_params
     params.require(:detail_task)

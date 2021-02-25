@@ -34,6 +34,6 @@
     <%= f.select :user_id, users, { prompt: '選択してください' } %>
   </div>
   <div class="actions">
-    <%= f.submit "保存する", class: :form_btn  %>
+    <%= f.submit "保存する", class: :form_btn ,method: :post %>
   </div>
 <% end %>
