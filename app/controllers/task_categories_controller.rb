@@ -19,21 +19,24 @@ class TaskCategoriesController < ApplicationController
       end
   end
   def edit
+    @task_category=TaskCategory.find(params[:id])
   end
   def update
+    @task_category=TaskCategory.find(params[:id])
     if @task_category.update(task_category_params)
-      render :index
+      redirect_to root_path
     else
       render :edit
     end
   end
   def destroy
+    @task_category=TaskCategory.find(params[:id])
     @task_category.destroy
-    render :index
+    redirect_to root_path
   end
   private
   def task_category_params
     params.require(:task_category)
-          .permit(:title, :description, :deadline, :state_id).merge(user_id: current_user.id)
+          .permit(:title, :description, :deadline, :state_id,:user_id).merge(user_id: current_user.id)
   end
 end
