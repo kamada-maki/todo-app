@@ -1,6 +1,5 @@
 <%= form_with(model:[@task_category,@detail_task],local:true) do |f|%>
 <%# <%= render 'shared/error_messages', model: f.object %> 
-  <h2>詳細TODO</h2>
   <div class="field">
     <%= f.label :title, "TODOタイトル" %><br />
     <%= f.text_field :title %>
