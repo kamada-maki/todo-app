@@ -1,5 +1,15 @@
 URL: https://todo-app-0206.herokuapp.com/
 
+- 登録済サンプルユーザー①</br>
+名前：山田　太郎</br>
+アドレス：test@gmail.com</br>
+パスワード：test123</br>
+
+- 登録済サンプルユーザー②</br>
+名前：蒲田　眞希</br>
+アドレス：test2@gmail.com</br>
+パスワード：test111</br>
+
 ## 必須機能要件
 - タスクの登録
 [![Image from Gyazo](https://i.gyazo.com/ef85ceadfbefdef6325f2d541d4f52b2.gif)](https://gyazo.com/ef85ceadfbefdef6325f2d541d4f52b2)
