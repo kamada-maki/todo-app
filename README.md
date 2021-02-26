@@ -1,3 +1,5 @@
+URL: https://todo-app-0206.herokuapp.com/
+
 ## 必須機能要件
 - タスクの登録
 [![Image from Gyazo](https://i.gyazo.com/ef85ceadfbefdef6325f2d541d4f52b2.gif)](https://gyazo.com/ef85ceadfbefdef6325f2d541d4f52b2)
@@ -12,12 +14,12 @@
 - タスクのタイトルおよび詳細→主要なタスク、細分化したタスクともに実装
 - ステータス、期日、担当→主要なタスク、細分化したタスクともに実装
 
-##　追加したい機能
+## 追加したい機能
 - 進捗状況のステータスを色を分け、JavaScriptで非同期にて実装
 - ステータスごと、担当者ごとに検索できる機能
 - 期日が近いものは色が変わるorアラートが出る
 
-##　使用言語・環境
+## 使用言語／環境
 フロントエンド HTML/CSS 
 バックエンド Ruby 2.6.5 Rails 6.1.3
 コード管理 Git/Github
