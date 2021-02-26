@@ -14,7 +14,7 @@ class TaskCategoriesController < ApplicationController
     @task_category=TaskCategory.new(task_category_params)
     @users = User.all
       if @task_category.save
-        render :index
+        redirect_to root_path
       else
         render :new
       end
