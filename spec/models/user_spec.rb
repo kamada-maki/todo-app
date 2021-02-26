@@ -29,12 +29,12 @@ RSpec.describe User, type: :model do
       it 'passwordが空だと登録できない' do
         @user.password = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("Passwordを入力してください", "Password confirmationとPasswordの入力が一致しません")
+        expect(@user.errors.full_messages).to include('Passwordを入力してください', 'Password confirmationとPasswordの入力が一致しません')
       end
       it 'passwordが6文字以上でないと登録できない' do
         @user.password = 'aaa12'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password confirmationとPasswordの入力が一致しません", "Passwordは6文字以上で入力してください")
+        expect(@user.errors.full_messages).to include('Password confirmationとPasswordの入力が一致しません', 'Passwordは6文字以上で入力してください')
       end
       it 'passwordが英字のみだと登録できない' do
         @user.password = 'abcdef'
