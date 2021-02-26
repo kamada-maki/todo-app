@@ -3,7 +3,7 @@
 <h1 class="page-titile">詳細ページ</h1>
   <table>
     <tr>
-      <th class="table">TODOタイトル</th>
+      <th class="table">TODO名</th>
         <td><%= @task_category.title %></td>
       </tr>
       <th class="table">詳細</th>
@@ -19,17 +19,28 @@
         <td><%= @task_category.user.name%></td>
       </tr>                        
   </table>
-
-  <%= render "detail_form", locals: { detail_task: @detail_task } %>
-   <% if @detail_tasks.present? %>
-    <% @task_category.detail_tasks.each do |detail_task|%>
-      <li class="detail_tasks_list">
-      <%= detail_task.title %>
-      <%= detail_task.deadline%>
-      <%= detail_task.user.name %>
-      <%= link_to '編集', edit_task_category_detail_task_path(@task_category,detail_task.id) %> 
-      <%= link_to '削除', task_category_detail_task_path(@task_category,detail_task.id), method: :delete, data: { confirm: '削除してよろしいですか？' } %>
-      </li>
+ 
+ 
+ 
+ <table>
+    <% if @detail_tasks.present? %>　
+      <th class="detail-task">タスク名</th>
+　　   <th class="detail-task">期日</th>
+      <th class="detail-task">担当者</th>
+      <th class="detail-task">進捗状況</th>
+      <th class="detail-task">リンク</th>
+      <% @task_category.detail_tasks.each do |detail_task|%>
+      <tr>
+      <div class="detail_tasks_list">
+        <td><%= detail_task.title %></td>
+        <td><%= detail_task.deadline%></td>
+        <td><%= detail_task.user.name %></td>
+        <td><%= detail_task.state.name %></td>
+        <td><%= link_to '編集', edit_task_category_detail_task_path(@task_category,detail_task.id) %> 
+            <%= link_to '削除', task_category_detail_task_path(@task_category,detail_task.id), method: :delete, data: { confirm: '削除してよろしいですか？' } %></td>
+      </div>
     <% end %>
+    </table>
   <% end %>
+    <%= render "detail_form", locals: { detail_task: @detail_task } %>
   </div>
