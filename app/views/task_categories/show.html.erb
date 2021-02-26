@@ -19,7 +19,12 @@
         <td><%= "#{@task_category.user.name}さん"%></td>
       </tr>                        
   </table>
- <div class="page-titile">細分化したTODO</div>
+     <ul class="todo-manage">
+      <li><%= link_to '編集', edit_task_category_path(@task_category.id),class:"todo-edit" %></li>
+      <li><%= link_to '削除', task_category_path(@task_category.id), method: :delete, data: { confirm: '削除してよろしいですか？' } ,class: "todo-edit"%></li>
+    </ul>
+ 
+ <div class="page-second-titile">細分化したTODO</div>
  <table>
     <% if @detail_tasks.present? %>　
       <th class="detail-task">タスク名</th>
