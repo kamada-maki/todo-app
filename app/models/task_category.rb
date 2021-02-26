@@ -8,6 +8,6 @@ class TaskCategory < ApplicationRecord
     validates :description
     validates :deadline
   end
-  validates :user_id, presence: true 
-  validates :state_id, numericality: { other_than: 1 } 
+  validates :user_id, presence: true
+  validates :state_id, numericality: { other_than: 1 }
 end
