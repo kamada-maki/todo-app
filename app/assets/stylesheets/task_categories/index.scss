@@ -1,0 +1,31 @@
+.todo-index {
+  width: 80vw;
+  padding: 1vh 5vw;
+}
+table{
+  width: 100%;
+  height: auto;
+  margin-bottom: 3vh;
+}
+table th{
+  border-bottom: solid 2px #55C500;
+  padding: 10px 0;
+  color: #666666;
+  text-align: center;
+  justify-content: center;
+}
+
+table td{
+  border-bottom: solid 2px #ddd;
+  text-align: center;
+  color: #666666;
+  padding: 1vh 1vh;
+}
+a{
+  text-decoration: none;
+  color: #666666;
+}
+.top-page{
+  color: #666666;
+  font-weight: bold;
+}
