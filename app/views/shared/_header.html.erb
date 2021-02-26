@@ -1,16 +1,21 @@
 
 <header class='top-page-header'>
- <div class=header-manage>
+ <div class="wrap">
+ <div class = 'header-manage'>
+ <%= link_to "TODO APP ", root_path, class: "to-index" %>
+ 
     <ul class='user-manage'>
       <% if user_signed_in? %>
-        <li><%= link_to "#{current_user.name}さんのTODO", class: "user-name"  %></li>
-        <li><%= link_to "新規投稿", new_task_category_path, class: :new_post_btn %></li>
+        <li><%= link_to "#{current_user.name}さんのTODO", root_path, class: "user-name"  %></li>
+        <li><%= link_to "新規投稿", new_task_category_path, class: "new_post_btn" %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "user-logout" %></li> 
       <%else%>
         <li><%= link_to 'ログイン', new_user_session_path, class: "user-login" %></li>
         <li><%= link_to '新規登録', new_user_registration_path, class: "user-sign-up" %></li>
       <% end %>
     </ul>
+    </div>
+    </div>
 </header>
 
  
