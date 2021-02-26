@@ -1,5 +1,5 @@
 URL: https://todo-app-0206.herokuapp.com/
-
+※現在ログインしているユーザーでしか担当者選択ができない状態になっています。
 - 登録済サンプルユーザー①</br>
 名前：山田　太郎</br>
 アドレス：test@gmail.com</br>
