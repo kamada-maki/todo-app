@@ -1,5 +1,7 @@
+<%= render "shared/header" %>
+<div class="todo-innner">
 <div class="user-log-in">
-  <h2 class="page-heading">ユーザーログイン</h2>
+  <h1 class="page-titile">ユーザーログイン</h1>
     <%= form_with model: @user, url: user_session_path , local: true do |f| %>
        <%= render 'shared/error_messages', model: f.object %>
        <div class='login-flash-message'>
@@ -14,8 +16,9 @@
         <%= f.label :password, "パスワード（6文字以上）" %><br />
         <%= f.password_field :password, autocomplete: "current-password" %>
       </div>
-      <div class="actions">
+      <div class="field">
         <%= f.submit "ログイン", class: :form_btn  %>
       </div>
     <% end %>
+  </div>
 </div>
