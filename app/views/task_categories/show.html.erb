@@ -16,7 +16,7 @@
         <td><%= @task_category.state.name%></td>
       </tr>
       <th class="table">担当者</th>
-        <td><%= @task_category.user.name%></td>
+        <td><%= "#{@task_category.user.name}さん"%></td>
       </tr>                        
   </table>
  
@@ -34,7 +34,7 @@
       <div class="detail_tasks_list">
         <td><%= detail_task.title %></td>
         <td><%= detail_task.deadline%></td>
-        <td><%= detail_task.user.name %></td>
+        <td><%= "#{detail_task.user.name}さん" %></td>
         <td><%= detail_task.state.name %></td>
         <td><%= link_to '編集', edit_task_category_detail_task_path(@task_category,detail_task.id) %> 
             <%= link_to '削除', task_category_detail_task_path(@task_category,detail_task.id), method: :delete, data: { confirm: '削除してよろしいですか？' } %></td>
