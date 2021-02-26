@@ -1,5 +1,7 @@
-URL: https://todo-app-0206.herokuapp.com/
-※現在ログインしているユーザーでしか担当者選択ができない状態になっています。
+URL: https://todo-app-0206.herokuapp.com/</br>
+
+※現在ログインしているユーザーでしか担当者選択ができない状態になっています。</br>
+
 - 登録済サンプルユーザー①</br>
 名前：山田　太郎</br>
 アドレス：test@gmail.com</br>
@@ -25,15 +27,16 @@ URL: https://todo-app-0206.herokuapp.com/
 - ステータス、期日、担当→主要なタスク、細分化したタスクともに実装
 
 ## 追加したい機能
-- 進捗状況のステータスを色を分け、JavaScriptで非同期にて実装
-- ステータスごと、担当者ごとに検索できる機能
+- 進捗状況のステータスを色を分ける（JavaScriptで非同期にて実装）
+- ステータスごと、担当者ごとに検索できる
 - 期日が近いものは色が変わるorアラートが出る
+- ログインしているユーザー以外も担当者へ指定ができる
 
 ## 使用言語／環境
 フロントエンド HTML/CSS 
-バックエンド Ruby 2.6.5 Rails 6.1.3
+バックエンド Ruby 2.6.3 Rails 6.1.3
 コード管理 Git/Github
-テスト Rspec
+テスト RSpec
 静的解析ツール Rubocop
 
 
@@ -53,7 +56,7 @@ URL: https://todo-app-0206.herokuapp.com/
 - has_many :task_categories
 - has_many :detail_tasks
 ---------------------------------------------
-### task_categoryテーブル
+### task_categoryテーブル(主要タスク)
 | column     | Type         |  Options            |
 |------------|------------- |---------------------|
 |title       |string        | null: false         |
@@ -67,7 +70,7 @@ URL: https://todo-app-0206.herokuapp.com/
 - has_many :detail_tasks
 
 
-### detail_taskテーブル
+### detail_taskテーブル（細分化タスク）
 | column       | Type         |  Options            |
 |--------------|------------- |---------------------|
 |title         |string        | null: false         |
