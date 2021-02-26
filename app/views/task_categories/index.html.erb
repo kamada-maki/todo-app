@@ -1,12 +1,24 @@
 <%= render "shared/header" %>
-<h1>トップページ</h1>
-  <% if @task_categories.present? %>
-    <% @task_categories.each do |task_category| %>
-      <%= link_to task_category.title, task_category_path(task_category.id), method: :get %>
-      <%= link_to task_category.deadline, task_category_path(task_category.id), method: :get %>
-      <%= link_to task_category.user.name, task_category_path(task_category.id), method: :get %>
-      <%= link_to '詳細', task_category_path(task_category.id), method: :get  %>
-      <%= link_to '編集', edit_task_category_path(task_category.id) %>
-      <%= link_to '削除', task_category_path(task_category.id), method: :delete, data: { confirm: '削除してよろしいですか？' } %>
-   <% end %>
-<% end %>
+<div class="todo-index">
+  <h1 class="top-page">トップページ</h1>
+    <table>
+      <% if @task_categories.present? %>
+      <th>タスク名</th>
+　　   <th>期日</th>
+      <th>担当者</th>
+      <th>進捗状況</th>
+      <th>リンク</th>
+        <% @task_categories.each do |task_category| %>
+        <tr>
+        <td><%= link_to task_category.title, task_category_path(task_category.id), method: :get %></td>
+        <td><%= link_to task_category.deadline, task_category_path(task_category.id), method: :get %></td>
+        <td><%= link_to "#{task_category.user.name}さん", task_category_path(task_category.id), method: :get %></td>
+        <td><%= link_to task_category.state.name, task_category_path(task_category.id), method: :get %></td>
+        <td><%= link_to '詳細', task_category_path(task_category.id), method: :get  %>
+        <%= link_to '編集', edit_task_category_path(task_category.id) %>
+        <%= link_to '削除', task_category_path(task_category.id), method: :delete, data: { confirm: '削除してよろしいですか？' } %></td>
+        <% end %>
+        </tr>
+      <% end %>
+    </table>
+</div>
